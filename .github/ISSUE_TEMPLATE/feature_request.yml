@@ -1,0 +1,134 @@
+name: "✨ Feature Request"
+description: "An idea or improvement not yet formally planned"
+title: "[FEATURE] "
+labels: ["✨ enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for ideas and improvements. Feature requests sit in the backlog until they are prioritised into a sprint.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the current situation and why it's a problem.
+      placeholder: "e.g. Currently I have to manually export data to Excel every time — it takes 30 minutes and is error-prone"
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would you like to happen? Describe the feature.
+      placeholder: "e.g. Add a one-click export button on the monitoring dashboard that generates a pre-formatted Excel report"
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefit
+    attributes:
+      label: Benefit / expected outcome
+      description: Who benefits and how? What does success look like?
+      placeholder: "e.g. Saves ~2 hours per week for the data team; reduces manual error risk"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Suggested priority
+      description: Your best guess — this will be confirmed during sprint planning.
+      options:
+        - "🔴 P0-critical — blocks release/pilot"
+        - "🟠 P1-high — important, not blocking"
+        - "🟡 P2-medium — should have"
+        - "🟢 P3-low — nice to have"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Rough effort estimate
+      description: Your best guess — will be confirmed during refinement.
+      options:
+        - "🔹 Small — less than 4 hours"
+        - "🔸 Medium — 1–2 days"
+        - "🔶 Large — 3–5 days"
+        - "🔺 XL — 1+ weeks"
+        - "Unknown"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain area
+      multiple: true
+      options:
+        - "⚙️ data-processing"
+        - "📊 visualization"
+        - "🗄️ database"
+        - "🎨 ui-ux"
+        - "📄 reports"
+        - "🚀 deployment"
+        - "🔍 Data Quality"
+        - "👤 Subject Monitoring"
+        - "🏥 Central Monitoring"
+        - "⚠️ RAM"
+        - "📚 documentation"
+        - "🔧 tech-debt"
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you considered any workarounds or other approaches?
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Screenshots, links, examples, related issues — anything else useful.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Implementation tasks
+        _Filled in by the developer. Hover over any checkbox in GitHub to convert it into its own linked sub-issue for bigger pieces of work — GitHub will show a live progress bar on this issue automatically._
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Implementation tasks
+      description: Standard checklist for every feature. Promote individual items to sub-issues as needed.
+      value: |
+        **Core implementation**
+        - [ ] Write the feature code
+        - [ ] Code reviewed
+
+        **Tests**
+        - [ ] Unit tests written (pytest)
+        - [ ] All existing tests pass (`pytest`)
+        - [ ] C# integration tests written and passed (if touching product layer)
+
+        **Documentation**
+        - [ ] Docstrings added to all new functions/classes
+        - [ ] Relevant `.md` doc file created or updated in `/docs`
+        - [ ] README updated if user-facing behaviour changed
+
+        **Sign-off**
+        - [ ] Sprint milestone assigned
+        - [ ] Labels up to date
+        - [ ] PR raised and linked to this issue
+    validations:
+      required: false

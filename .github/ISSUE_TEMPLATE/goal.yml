@@ -1,0 +1,113 @@
+name: "🎯 Goal"
+description: "Work that must be completed — a non-negotiable job deliverable"
+title: "[GOAL] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for work that **must** be delivered. Goals are non-negotiable and should be assigned to a sprint milestone.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs to be done?
+      description: A clear description of the goal and what done looks like.
+      placeholder: "e.g. Produce a validated RAM report for Site 001 by end of sprint"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why is this a goal?
+      description: Business justification — who is asking for it and why it must be completed.
+      placeholder: "e.g. Required for the pilot submission deadline set by the sponsor"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How will we know this is done? List the conditions that must be true.
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - "🔴 P0-critical — blocks release/pilot"
+        - "🟠 P1-high — important, not blocking"
+        - "🟡 P2-medium — should have"
+        - "🟢 P3-low — nice to have"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: sprint
+    attributes:
+      label: Sprint
+      options:
+        - "26.1 — March 2026"
+        - "26.2 — September 2026"
+        - "27.1 — March 2027"
+        - "Backlog — not yet assigned"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Effort estimate
+      options:
+        - "🔹 Small — less than 4 hours"
+        - "🔸 Medium — 1–2 days"
+        - "🔶 Large — 3–5 days"
+        - "🔺 XL — 1+ weeks"
+        - "Unknown"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain area
+      multiple: true
+      options:
+        - "⚙️ data-processing"
+        - "📊 visualization"
+        - "🗄️ database"
+        - "🎨 ui-ux"
+        - "📄 reports"
+        - "🚀 deployment"
+        - "🔍 Data Quality"
+        - "👤 Subject Monitoring"
+        - "🏥 Central Monitoring"
+        - "⚠️ RAM"
+        - "📚 documentation"
+        - "🔧 tech-debt"
+    validations:
+      required: true
+
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      description: Who is responsible for delivering this?
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Any dependencies, blockers, or context worth capturing.
+    validations:
+      required: false

@@ -1,0 +1,145 @@
+name: "🐛 Bug Report"
+description: "Something isn't working as expected"
+title: "[BUG] "
+labels: ["🐛 bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to report something that is broken or behaving unexpectedly.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What's going wrong?
+      description: A clear description of the bug — what is happening versus what you expected to happen.
+      placeholder: "e.g. The RAM report exports with blank values in column C even when data is present"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: How can someone reliably trigger this bug?
+      placeholder: |
+        1. Go to...
+        2. Run...
+        3. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What should have happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: What actually happened? Include any error messages or screenshots.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How badly does this affect work?
+      options:
+        - "🔴 P0-critical — blocks release/pilot"
+        - "🟠 P1-high — important, not blocking"
+        - "🟡 P2-medium — should fix"
+        - "🟢 P3-low — minor issue"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain area
+      multiple: true
+      options:
+        - "⚙️ data-processing"
+        - "📊 visualization"
+        - "🗄️ database"
+        - "🎨 ui-ux"
+        - "📄 reports"
+        - "🚀 deployment"
+        - "🔍 Data Quality"
+        - "👤 Subject Monitoring"
+        - "🏥 Central Monitoring"
+        - "⚠️ RAM"
+        - "📚 documentation"
+        - "🔧 tech-debt"
+        - "Validation issue"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Which repo is affected?
+      options:
+        - "Data-Quality"
+        - "Experimental-Models"
+        - "Models-for-OPRA"
+        - "Data-Translation"
+        - "Unknown"
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did this occur? e.g. local, staging, production, OPRA
+      placeholder: "e.g. production Data-Quality, OPRA pilot environment"
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Logs, screenshots, related issues, or anything else useful.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Implementation tasks
+        _Filled in by the developer. Hover over any checkbox in GitHub to convert it into its own linked sub-issue._
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Implementation tasks
+      value: |
+        **Investigation**
+        - [ ] Root cause identified
+
+        **Fix**
+        - [ ] Fix implemented
+        - [ ] Code reviewed
+
+        **Tests**
+        - [ ] Regression test added (pytest) so this cannot recur
+        - [ ] All existing tests pass (`pytest`)
+        - [ ] C# integration tests confirmed (if touching product layer)
+
+        **Documentation**
+        - [ ] Relevant `.md` doc updated if behaviour change affects users
+
+        **Sign-off**
+        - [ ] Sprint milestone assigned
+        - [ ] Labels up to date
+        - [ ] PR raised and linked to this issue
+    validations:
+      required: false
