@@ -96,6 +96,7 @@ body:
         - "🏭 data-generation"
         - "🧪 experimental-models"
         - "🫀 site-pulse"
+        - "📉 dropcast"
     validations:
       required: true
 

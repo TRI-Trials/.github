@@ -80,6 +80,7 @@ body:
         - "🏭 data-generation"
         - "🧪 experimental-models"
         - "🫀 site-pulse"
+        - "📉 dropcast"
     validations:
       required: true
 
@@ -95,6 +96,7 @@ body:
         - "data_gen_app"
         - "site-pulse"
         - "Data-Translation"
+        - "dropcast"
         - "Unknown"
     validations:
       required: true
