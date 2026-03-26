@@ -1,28 +1,28 @@
-name: "🎯 Goal"
-description: "Work that must be completed — a non-negotiable job deliverable"
+name: "📌 Task"
+description: "A discrete action item — not a feature or bug, but something that needs doing"
 title: ""
-labels: ["🎯 goal"]
+labels: ["📌 task"]
 body:
   - type: markdown
     attributes:
       value: |
-        Use this template for work that **must** be delivered. Goals are non-negotiable and should be assigned to a sprint milestone.
+        Use this template for action items that don't involve writing code — e.g. follow-up communications, preparing materials, coordinating with stakeholders, or one-off investigations.
 
   - type: textarea
     id: description
     attributes:
       label: What needs to be done?
-      description: A clear description of the goal and what done looks like.
-      placeholder: "e.g. Produce a validated RAM report for Site 001 by end of sprint"
+      description: A clear description of the task and what done looks like.
+      placeholder: "e.g. Send follow-up materials to Vertex explaining the variation model output"
     validations:
       required: true
 
   - type: textarea
-    id: reason
+    id: context
     attributes:
-      label: Why is this a goal?
-      description: Business justification — who is asking for it and why it must be completed.
-      placeholder: "e.g. Required for the pilot submission deadline set by the sponsor"
+      label: Context
+      description: Why does this need doing? What triggered it?
+      placeholder: "e.g. The variation model was demonstrated at the Vertex showcase but the output wasn't clearly explained — a follow-up is needed to reinforce the message."
     validations:
       required: true
 
@@ -30,7 +30,7 @@ body:
     id: acceptance
     attributes:
       label: Acceptance criteria
-      description: How will we know this is done? List the conditions that must be true.
+      description: How will we know this is done?
       placeholder: |
         - [ ] Criterion 1
         - [ ] Criterion 2
@@ -50,18 +50,6 @@ body:
       required: true
 
   - type: dropdown
-    id: sprint
-    attributes:
-      label: Sprint
-      options:
-        - "26.1 — March 2026"
-        - "26.2 — September 2026"
-        - "27.1 — March 2027"
-        - "Backlog — not yet assigned"
-    validations:
-      required: true
-
-  - type: dropdown
     id: effort
     attributes:
       label: Effort estimate
@@ -69,7 +57,6 @@ body:
         - "🔹 Small — less than 4 hours"
         - "🔸 Medium — 1–2 days"
         - "🔶 Large — 3–5 days"
-        - "🔺 XL — 1+ weeks"
         - "Unknown"
     validations:
       required: true
@@ -103,7 +90,7 @@ body:
     id: owner
     attributes:
       label: Owner
-      description: Who is responsible for delivering this?
+      description: Who is responsible for completing this?
       placeholder: "@username"
     validations:
       required: true
@@ -112,6 +99,6 @@ body:
     id: notes
     attributes:
       label: Additional notes
-      description: Any dependencies, blockers, or context worth capturing.
+      description: Any dependencies, deadlines, or useful context.
     validations:
       required: false

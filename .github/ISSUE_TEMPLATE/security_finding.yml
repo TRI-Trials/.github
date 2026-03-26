@@ -1,0 +1,101 @@
+name: "🔒 Security Finding"
+description: "Report a dependency flagged by Mend.io — vulnerability or licence issue"
+title: ""
+labels: ["mend.io"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to record a Mend.io scan finding. All findings must be resolved — by accepting with justification or fixing — within the agreed timeframe.
+
+  - type: input
+    id: package
+    attributes:
+      label: Package / dependency
+      description: Which package did Mend.io flag?
+      placeholder: "e.g. numpy==1.24.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: finding
+    attributes:
+      label: Finding
+      description: Paste the CVE ID, licence type, or Mend.io finding reference. You can also paste or drag in a screenshot of the Mend.io report.
+      placeholder: "e.g. CVE-2023-12345 / GPL-3.0 — or paste a screenshot here"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: finding-type
+    attributes:
+      label: Finding type
+      options:
+        - "Vulnerability"
+        - "Licence (GPL)"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Mend.io severity
+      description: Severity as reported by Mend.io. Leave blank for licence findings — this only applies to vulnerabilities.
+      options:
+        - "Critical"
+        - "High"
+        - "Medium"
+        - "Low"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: actively-used
+    attributes:
+      label: Is this package actively used?
+      description: Is this package imported and used in live code, or is it a historical / unused dependency?
+      options:
+        - "Yes — actively used"
+        - "No — historical or unused"
+        - "Partially — used in some contexts"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: decision
+    attributes:
+      label: Decision
+      options:
+        - "Accept — justification provided below"
+        - "Fix — remediation plan provided below"
+    validations:
+      required: true
+
+  - type: textarea
+    id: justification
+    attributes:
+      label: Justification or remediation plan
+      description: |
+        **If accepting:** explain why the finding does not pose a real risk (e.g. package is not used in a way that exposes the vulnerability, or it is unused and will be removed separately).
+        **If fixing:** describe the plan — target version, PR reference, or removal plan.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        > **Reminder:** This issue must be closed within the agreed timeframe of being opened — either accepted with justification or fixed.
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Implementation tasks
+      value: |
+        - [ ] Finding reviewed and decision made
+        - [ ] Justification or fix documented in this issue
+        - [ ] If fixing: PR raised and linked to this issue
+        - [ ] Issue closed
+    validations:
+      required: false

@@ -1,6 +1,6 @@
 name: "🐛 Bug Report"
 description: "Something isn't working as expected"
-title: "[BUG] "
+title: ""
 labels: ["🐛 bug"]
 body:
   - type: markdown
@@ -77,6 +77,9 @@ body:
         - "📚 documentation"
         - "🔧 tech-debt"
         - "Validation issue"
+        - "🏭 data-generation"
+        - "🧪 experimental-models"
+        - "🫀 site-pulse"
     validations:
       required: true
 
@@ -85,9 +88,12 @@ body:
     attributes:
       label: Which repo is affected?
       options:
-        - "Data-Quality"
-        - "Experimental-Models"
-        - "Models-for-OPRA"
+        - "data_quality_app"
+        - "experimental_models"
+        - "models_for_opra"
+        - "model_generator"
+        - "data_gen_app"
+        - "site-pulse"
         - "Data-Translation"
         - "Unknown"
     validations:

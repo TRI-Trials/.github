@@ -1,6 +1,6 @@
 name: "✨ Feature Request"
 description: "An idea or improvement not yet formally planned"
-title: "[FEATURE] "
+title: ""
 labels: ["✨ enhancement"]
 body:
   - type: markdown
@@ -80,6 +80,10 @@ body:
         - "⚠️ RAM"
         - "📚 documentation"
         - "🔧 tech-debt"
+        - "Validation issue"
+        - "🏭 data-generation"
+        - "🧪 experimental-models"
+        - "🫀 site-pulse"
     validations:
       required: true
 
